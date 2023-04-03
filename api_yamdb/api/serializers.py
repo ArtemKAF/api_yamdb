@@ -47,6 +47,9 @@ class ReviewSerializer(serializers.ModelSerializer):
         )
         model = Review
 
+    def validate(self, data):
+        self.get_queryset()
+
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
